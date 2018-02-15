@@ -2,7 +2,7 @@
 #Descripcion: Convierte las horas en formato de 24hrs a 12
 
 
-#Funcion que cambia la hora en formato de 14 horas a 12.
+#Funcion que cambia la hora en formato de 14 horas a 12
 def calcularHora(h,m,s):
 #Calcula cuando la hora es menor a 12 , no hay ningun cambio en ese caso
     if h<12:
