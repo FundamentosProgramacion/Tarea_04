@@ -15,8 +15,6 @@ def calcularCosto(n):
         costo = (n * 1500)*.5
         return costo
 
-
-
 def calcularDescuento(n):
     if n>= 10 and n<19:
         descuento = ((n*1500)*.2)
@@ -31,19 +29,21 @@ def calcularDescuento(n):
         descuento = ((n * 1500) *.5)
         return descuento
 
+def calcularCostoDescuento(numeroPaquetes):
+    if numeroPaquetes<=0:
+        return "Esta cantidad de paquetes no es válida"
+
+    elif numeroPaquetes>=10:
+        descuentoF = calcularDescuento(numeroPaquetes)
+        costoFinalF = calcularCosto(numeroPaquetes)
+        return ("El descuento es:$%i\n El costo total es:$%i"%(descuentoF,costoFinalF))
+    else:
+        costoFinal = numeroPaquetes*1500
+        return "El costo final es:$%i"%(costoFinal)
 
 def main():
     numeroPaquetes = int(input("¿qué número de paquetes deseea a comprar?: "))
-    if numeroPaquetes<=0:
-        print("Esta cantidad de paquetes no es válida")
-
-    elif numeroPaquetes>=10:
-        descuento = calcularDescuento(numeroPaquetes)
-        costoFinal = calcularCosto(numeroPaquetes)
-        print("El descuento es: $%.2f"% descuento)
-        print("EL costo final es: $%.2f"% costoFinal)
-    else:
-        costoFinal = numeroPaquetes*1500
-        print("EL costo final es: $%.2f"%costoFinal)
+    paquetesCalculos= calcularCostoDescuento(numeroPaquetes)
+    print (paquetesCalculos)
 
 main()
