@@ -17,11 +17,12 @@ def calcularHora12(cantidad):
 
 def determinarAMPM(cantidad):
     AMPM = ''
-    hora24 = cantidad +1
-    if cantidad > 12:
-        AMPM = 'PM'
-    else :
+    if cantidad == 0:
         AMPM = 'AM'
+    elif cantidad <12:
+        AMPM = 'AM'
+    else:
+        AMPM = 'PM'
     return AMPM
 
 
